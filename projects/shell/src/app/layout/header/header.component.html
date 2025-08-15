@@ -1,0 +1,10 @@
+<nav class="navbar navbar-expand bg-body-tertiary px-3" *ngIf="user()">
+  <a class="navbar-brand fw-bold" routerLink="/">MicroFE Suite</a>
+  <ul class="navbar-nav me-auto">
+    <li class="nav-item"><a class="nav-link" routerLink="/dashboard">Dashboard</a></li>
+    <li class="nav-item" *hasRole="['admin']"><a class="nav-link" routerLink="/users">Users</a></li>
+  </ul>
+  <button class="btn btn-outline-secondary me-3" (click)="toggleTheme()">🌓 Theme</button>
+  <span class="me-3">Hi, {{ user()?.name }} ({{ user()?.role }})</span>
+  <button class="btn btn-danger" (click)="logout()">Logout</button>
+</nav>

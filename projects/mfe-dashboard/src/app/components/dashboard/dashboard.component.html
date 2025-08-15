@@ -1,0 +1,17 @@
+<div class="dashboard">
+  <ng-container *ngFor="let item of dashboardData">
+    <app-card
+      *hasRole="item.roles"
+      [title]="item.title"
+      [content]="item.content"
+    ></app-card>
+  </ng-container>
+
+  <app-card
+    *hasRole="['admin']"
+    title="Monthly Stats"
+    content="A chart showing monthly statistics."
+  >
+    <app-chart [data]="chartData"></app-chart>
+  </app-card>
+</div>

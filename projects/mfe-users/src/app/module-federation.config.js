@@ -1,0 +1,1 @@
+// exposes: { './Module': './projects/mfe-users/src/app/app.routes.ts' }

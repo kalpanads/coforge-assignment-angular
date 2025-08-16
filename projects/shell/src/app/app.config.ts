@@ -3,10 +3,12 @@ import { provideRouter, withComponentInputBinding, withDebugTracing } from '@ang
 import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { authInterceptor } from './auth/auth.interceptor';
+import { AppStore } from 'shared';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes, withComponentInputBinding(), withDebugTracing()),
     provideHttpClient(withInterceptors([authInterceptor])),
+    AppStore,
   ]
 };
